@@ -1,0 +1,30 @@
+﻿@model EmployeeApp.Models.EmployeeModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Registration</h2>
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { @class = "registration-form" }))
+{
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+    <br />
+
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    <br />
+
+    @Html.LabelFor(m => m.Phone)
+    @Html.TextBoxFor(m => m.Phone)
+    <br />
+    @Html.LabelFor(m => m.JobTitle)
+    @Html.TextBoxFor(m => m.JobTitle)
+    <br />
+    @Html.LabelFor(m => m.Division)
+    @Html.TextBoxFor(m => m.Division)
+    <br />
+    @Html.LabelFor(m => m.Active)
+    @Html.TextBoxFor(m => m.Active)
+    <br />
+    <input type="submit" value="Register" class="submit-button" /> <a asp-action="Index" asp-controller="Home">Back to Login</a>
+}
